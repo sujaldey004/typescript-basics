@@ -1,10 +1,9 @@
-function play(age:number):boolean{
-    if(age>18 || age ==18){
-        return true;
-    }
-
-    return false;
+function play(fn:Function, timeout:number){
+    setTimeout(()=>{
+        fn()
+    }, timeout);
 }
 
-const value = play(20);
-console.log(value);
+play(()=>{
+    console.log("Hello Sam");
+}, 1000)
