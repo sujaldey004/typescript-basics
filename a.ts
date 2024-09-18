@@ -1,5 +1,6 @@
-function play(firstName: String){
-    console.log("Hello "+firstName);
+function sum(n1:number, n2:number){
+    return n1+n2;
 }
 
-play("Sam");
+const value = sum(5, 2);
+console.log(value);
