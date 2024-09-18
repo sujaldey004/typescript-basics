@@ -1,6 +1,9 @@
 "use strict";
-function sum(n1, n2) {
-    return n1 + n2;
+function play(age) {
+    if (age > 18 || age == 18) {
+        return true;
+    }
+    return false;
 }
-const value = sum(5, 2);
+const value = play(20);
 console.log(value);
