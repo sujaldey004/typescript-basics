@@ -1,21 +1,11 @@
-interface User{
-    firstName : String,
-    lastName : String,
-    age : number
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
 }
 
-function play(user : User){
-    if(user.age > 18 || user.age == 18){
-        return true;
-    }
-
-    return false;
-}
-
-const value = play({
-    firstName: "Sujal",
-    lastName: "Dey",
-    age: 20
-})
-
-console.log(value);
+console.log(Direction.Up)
+console.log(Direction.Down)
+console.log(Direction.Left)
+console.log(Direction.Right)
