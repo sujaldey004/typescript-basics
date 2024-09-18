@@ -1,2 +1,5 @@
-const x:string = "coderSam";
-console.log(x)
+function play(firstName: String){
+    console.log("Hello "+firstName);
+}
+
+play("Sam");

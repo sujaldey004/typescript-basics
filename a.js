@@ -1,3 +1,5 @@
 "use strict";
-const x = "coderSam";
-console.log(x);
+function play(firstName) {
+    console.log("Hello " + firstName);
+}
+play("Sam");
