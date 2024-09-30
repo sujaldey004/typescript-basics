@@ -1,8 +1,14 @@
-type user = Record<string,{age : number, name : string}>;
-
-const users : user = {
-    "1": {age:20, name:"sam"},
-    "2": {age:20, name:"sujal"}
+type userss = {
+    name : string,
+    age : number
 }
 
-// Record api is generally used to write cleaner syntax while using objects
+const user = new Map<string, userss>();
+user.set("1", {name : "sam", age:20})
+user.set("2", {name:"sujal", age:20})
+
+const users = user.get("2")
+console.log(users);
+
+
+// Another syntax to creatre key value object
