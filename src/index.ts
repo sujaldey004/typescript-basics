@@ -1,26 +1,8 @@
-// type user = {
-//     name : string,
-//     age : number
-// }
+type user = Record<string,{age : number, name : string}>;
 
-// const userProp : user = {
-//     name : "sam",
-//     age : 20
-// }
-
-// userProp.age = 21;  // we can change props of object and arrays like this 
-
-// console.log(userProp.age);
-
-type user = {
-    name : string,
-    age : number
+const users : user = {
+    "1": {age:20, name:"sam"},
+    "2": {age:20, name:"sujal"}
 }
 
-const userProp : Readonly<user> = {
-    name : 'sam',
-    age : 20
-}
-
-userProp.age(21); // Now we can't change this because we used Readonly api here
-console.log(userProp)
+// Record api is generally used to write cleaner syntax while using objects
