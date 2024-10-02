@@ -1,14 +1,31 @@
-type userss = {
-    name : string,
-    age : number
-}
+import { z } from 'zod';
+import express from "express";
 
-const user = new Map<string, userss>();
-user.set("1", {name : "sam", age:20})
-user.set("2", {name:"sujal", age:20})
+const app = express();
 
-const users = user.get("2")
-console.log(users);
+const userProfileSchema = z.object({
+    name : z.string(),
+    email : z.string().email(),
+    age : z.number().optional()
+});
 
+type FinalUserSchema = z.infer<typeof userProfileSchema>
 
-// Another syntax to creatre key value object
+app.put("/users", (req, res)=>{
+    const { success } = userProfileSchema.safeParse(req.body);
+    const updateBody : FinalUserSchema = req.body;
+
+    if(!success){
+        res.status(411).json({});
+        return
+    }
+
+    res.json({
+        message: "User updated"
+    })
+
+})
+
+app.listen(3000, ()=>{
+    console.log("Server started on port 3000");
+})
